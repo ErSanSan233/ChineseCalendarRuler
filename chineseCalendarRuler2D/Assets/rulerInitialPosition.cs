@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class rulerInitialPosition : MonoBehaviour
 {
-    public Transform xAxis;
-    public Transform yAxis;
-    [Range(0,2)]
-    public float lineWidth = 1;
+    public globalDefinitions def;
+
+    
     public Transform rulerBaseSquare;
     public bool reverseY = false;
 
@@ -24,14 +23,12 @@ public class rulerInitialPosition : MonoBehaviour
     }
 
     void Start() {
-        originPoint = new Vector3(
-            yAxis.position.x,
-            xAxis.position.y,
-            0);
+        Debug.Log(rulerBaseSquare.position);
+        originPoint = def.getO();
 
         lineDeviation = new Vector3(
-            lineWidth / 2,
-            (reverseY == true ? -1 : 1) * lineWidth / 2,
+            def.lineWidth/2,
+            (reverseY == true ? -1 : 1) * def.lineWidth/2,
             0);
 
         squareDeviation = new Vector3(
@@ -39,6 +36,8 @@ public class rulerInitialPosition : MonoBehaviour
             (reverseY == true ? -1 : 1) * rulerBaseSquare.localScale.y/2,
             0);
 
+        //农历尺和中气轴思路不同：农历尺作为一个整体移动整个Transform，中气轴分散不动。
+        //在突出显示闰月和当年范围时还是需要大打散并分别处理。
         transform.position = readyPosition();
     }
 
