@@ -277,6 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353099195}
   - component: {fileID: 353099194}
+  - component: {fileID: 353099196}
   m_Layer: 0
   m_Name: LunarMonthSquare
   m_TagString: Untagged
@@ -351,6 +352,21 @@ Transform:
   m_Father: {fileID: 290596812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353099196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353099193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9130a2aee4df4d4bb74721ee401b254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showCursor: 0
+  leapRectangleColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  leapTextColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &365083465
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +923,7 @@ GameObject:
   - component: {fileID: 1998388225}
   - component: {fileID: 1998388224}
   m_Layer: 0
-  m_Name: MoonIndicator
+  m_Name: MoonIndicatorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

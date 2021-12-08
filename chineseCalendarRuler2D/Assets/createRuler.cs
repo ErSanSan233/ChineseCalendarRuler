@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class createRuler : MonoBehaviour{
     public globalDefinitions def;
-    public Color yinColor = Color.black;
-    public Color yangColor = Color.yellow;
+    public Color yinColor;// = Color.black;
+    public Color yangColor;// = Color.yellow;
+    public Color leapRectangleColor = Color.yellow;
+    public Color leapTextColor = Color.black;
     public GameObject basicRectangle;
 
     private ArrayList ruler = new ArrayList();
