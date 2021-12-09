@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class globalDefinitions : MonoBehaviour
 {
+    [Header("Ruler Settings")]
+    public createRuler ruler;
+    public Color rulerYinColor = new Color32(35, 137, 188, 255);
+    public Color rulerYangColor = Color.white;
+    public Color leapRectangleColor = Color.yellow;
+    public Color leapTextColor = Color.black;
+
+    [Header("Axis Settings")]
+    public createAxis axis;
     [Range(0,2)]
     public float lineWidth = 1;
+    public Color axisYinColor = new Color32(122, 122, 122, 255);
+    public Color axisYangColor = new Color32(40, 40, 40, 255);
 
+    [Header("GameObject Definitions")]
     [SerializeField]
     private Transform xAxis;
     [SerializeField]

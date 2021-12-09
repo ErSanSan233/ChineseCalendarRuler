@@ -23,7 +23,6 @@ public class rulerInitialPosition : MonoBehaviour
     }
 
     void Start() {
-        Debug.Log(rulerBaseSquare.position);
         originPoint = def.getO();
 
         lineDeviation = new Vector3(

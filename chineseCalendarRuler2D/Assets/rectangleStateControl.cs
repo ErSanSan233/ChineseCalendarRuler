@@ -16,19 +16,25 @@ public class rectangleStateControl : MonoBehaviour
     public cursorType showCursor = cursorType.none;
     public GameObject cursor;
 
-    private bool isLeap = false;
     private SpriteRenderer rectangleSprite;
     private TextMesh textIndicator;    
 
     public bool getIsLeap(List<float> _zhongqiPositionXList) {
-        foreach (float _zhongqi in _zhongqiPositionXList){
-
+        foreach (float _zhongqiX in _zhongqiPositionXList){
+            if (getLeftEdgeX() <= _zhongqiX && _zhongqiX < getRightEdgeX()) {
+                return false;
+            }
+            else {
+                
+            }
         }
-        //TODO 判断left和right是否夹住list中所有中气，若有则立刻返回false
-        return isLeap;
+        return true;
     }
 
-    
+    // 有特殊规定某个月是否是闰月的情况，因此加一个强制闰月
+    public bool getIsLeap(bool _forceLeap) {
+        return _forceLeap;
+    }
 
     public void setState(
         Color _rectangleColor,
