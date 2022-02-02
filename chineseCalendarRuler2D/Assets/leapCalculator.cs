@@ -21,22 +21,30 @@ public class leapCalculator : MonoBehaviour
 
     public void calculate() {
         ready();
-        int delay = -3;
-        for (int _i = 0 + delay ; _i < monthList.Count + delay; _i++) {
+
+        for (int _i = 0 ; _i < monthList.Count; _i++) {
             rectangleStateControl month =
                 monthList[_i].GetComponent<rectangleStateControl>();
+            if (month.getIsLeap(zhongqiXList)) {
+
+                month.setState(def.leapRectangleColor, def.leapTextColor);
+
+                //Debug.Log(_i);
+                ruler.drawLeapMonthRuler(_i);
+            }
             //TODO 自动判定：新年、闰月
             // 自动设定格式
             // 手动可以设置更多新年相关事情
         }
 
-        //foreach(GameObject month in monthList) {
-  
+        // following visualization method abandoned 
+        //
+        //foreach (GameObject month in monthList) {
         //    rectangleStateControl monthState = month.GetComponent<rectangleStateControl>();
         //    if (monthState.getIsLeap(zhongqiXList)) {
         //        monthState.setState(def.leapRectangleColor, def.leapTextColor);
+        //    } else {         
         //    }
-
         //}
     }
 
